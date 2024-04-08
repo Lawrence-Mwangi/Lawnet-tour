@@ -1,0 +1,55 @@
+.main_container{
+    .service_container{
+        h2{
+            text-align: center;
+            padding: 0.5em 0;
+        }
+        span{
+            height: 4px;
+            display: block;
+            width: 10em;
+            background: $accent-color;
+            position:absolute;
+            left:42%;
+        }
+        p{
+            font-size: 1.1em;
+            padding: 0.9em 0;
+            margin-bottom: 2em;
+        }
+
+        .service_items{
+            @include grid(4);
+
+            .service_content{
+                padding: 0.9em 0.5em;
+                border: 1px solid $accent-color;
+                border-radius: 20px;
+    
+                h3{
+                    text-align: center;
+                }
+    
+            }
+        }
+    }
+}
+
+@media screen and (width <=726px) {
+    .main_container{
+        .service_container{
+            padding: 0 5%;
+            h2{
+                font-size: 1.1em;
+                padding: 0.9em 0;
+              }
+
+              p{
+                padding: 1em;
+              }
+              span{
+                left: 25%;
+              }
+        }
+    }
+}

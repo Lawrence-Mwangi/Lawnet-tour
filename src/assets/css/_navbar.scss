@@ -1,0 +1,133 @@
+.nav_container{
+    @include flex_center;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 4px $primary-color;
+    backdrop-filter: blur(6px);
+    padding:0 1.2em;
+    height: 10vh;
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 100;
+
+    .logo{
+        @include flex_center;
+        flex-direction: row;
+        align-items: center;
+        gap:0.9em;
+
+        a{
+            text-decoration: none;
+            color: $primary-color;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        img{
+            border-radius: 50%;
+        }
+    }
+    .nav_links{
+
+       ul{
+        @include flex_center;
+        flex-direction: row;
+        list-style: none;
+        li{
+            padding: 0 0.5em;
+
+            a{
+                text-decoration: none;
+                color: $primary-color;
+                font-size: 1.2em;
+                font-weight: 550;
+        
+                &:hover{
+                    color:$accent-color;
+                }
+            }
+            .router-link-active{
+                color:$accent-color;
+            }
+        }
+       }
+
+    }
+
+    .burger{
+        display: none;
+        cursor: pointer;
+        padding:0.4em 0.4em;
+
+        span{
+            display: block;
+            margin: 6px 0;
+            background-color:$primary-color;
+            width: 30px;
+            height: 3px;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .burger.active ~ .nav_links {
+        display: block;
+    }
+    .burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px); 
+    }
+
+    .burger.active span:nth-child(2) {
+    opacity: 0; 
+    }
+
+    .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px); 
+    } 
+}
+
+@media screen and (width <=726px) {
+    .nav_container{
+        .nav_links{
+            ul{
+                flex-direction: column;
+                position: absolute;
+                top: 10vh;
+                right: 0;
+                width: 50%;
+                height: 65vh;
+                background: $primary-color;
+                backdrop-filter: blur(3px);
+                display: none;
+                z-index: 99;
+
+                a{
+                    @include flex_center;
+                    align-items: center;
+                    color:$secondary-color;
+                    font-weight: 550;
+                    padding: 0.9em 0;
+                }
+
+                &.show{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    a{
+                        color: $secondary-color;
+                    }
+
+                    .router-link-active{
+                        color:#4dd3e5;
+                    }
+                }    
+            }
+        }
+        .burger{
+            display: block;
+        }
+
+    }
+}

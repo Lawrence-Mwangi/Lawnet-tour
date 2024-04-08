@@ -1,0 +1,45 @@
+.design_container{
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../images/beach2.jpg);
+    background-repeat: none;
+    background-size: cover;
+    background-attachment:fixed;
+    height: 65vh;
+    position: relative;
+    border-radius: 12px;
+
+    .design_content{
+        padding: 2em;
+        color:$secondary-color;
+        position: absolute;
+        top:2%;
+        left:5%;
+        width: 65%;
+        h2{
+            padding: 0.3em 0;
+        }
+
+        span{
+            height: 3px;
+            display: block;
+            width: 10em;
+            background: $accent-color;
+            position:absolute;
+            left:10%;
+        }
+        p{
+            font-size: 1.1em;
+            padding: 0.9em 0;
+        }
+    }
+}
+
+@media screen and (width <=726px) {
+    .design_container{
+        height: 55vh;
+        .design_content{
+            width: 100%;
+            left: 0%;
+            
+        }
+    }
+}

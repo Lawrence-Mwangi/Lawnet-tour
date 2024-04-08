@@ -1,0 +1,66 @@
+.hero_container {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../images/beach.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 90vh;
+
+    .hero_content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $secondary-color;
+
+        h1{
+            padding: 0.9em 0;
+            font-size: 2.5em;
+        }
+        p{
+            padding: 0.9em 0;
+            font-size: 1.3em;
+        }
+        .btn{
+            @include flex_center;
+            flex-direction: row;
+            justify-content: start;
+            gap:2em;
+
+            a{
+                text-decoration: none;
+                color:$secondary-color;
+                font-size: 1.1em;
+            }
+            button{
+                &:hover{
+                    background: $accent-color;
+                }
+            }
+        }
+    }
+}
+
+
+@media  screen and (width <=726px) {
+    .hero_container{
+        height: 55vh;
+        background-position: center;
+
+        .hero_content{
+            top:18%;
+            left: 3%;
+            transform: translate(0%, 0%);
+            padding: 0 5%;
+
+            h1{
+                font-size: 1.32em;
+            }
+            p{
+                font-size: 1em;
+            }
+            .btn{
+                padding: 0.9em 0;
+            }
+        }
+    }
+}

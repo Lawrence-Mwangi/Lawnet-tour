@@ -1,0 +1,70 @@
+.project_container{
+    .project_content{
+        padding: 0.9em 0;
+
+        .project_items{
+            @include grid(2);
+            gap:2em;
+
+            .details{
+                border: 1px solid $primary-color;
+                padding: 0.5em;
+                font-size: 1.1em;
+                border-radius: 12px;
+                h2{
+                    padding: 0.3em 0;
+                }
+            }
+        }
+    }
+    h2{
+        padding: 0.9em 0;
+    }
+    .project_infor{
+        @include grid(3);
+        gap:2em;
+
+        .work{
+            padding:1em 0.5em;
+            background: #ededed;
+            border-radius:12px;
+
+            img{
+                width: 100%;
+                height: 45vh;
+                border-radius:16px;
+            }
+            h3{
+                padding: 0.5em 0;
+            }
+            p{
+                padding: 0.3em 0;
+                font-size: 1.1em;
+
+                span{
+                    color:green;
+                    font-weight: bold;
+                }
+            }
+           .btn{
+                padding: 0.3em 0;
+
+                a{
+                    text-decoration: none;
+                    color:$secondary-color;
+                    font-size: 1.1em;
+                }
+           }
+        }
+    }
+}
+
+
+
+@media screen and (width <=726px) {
+
+    .project_container{
+        padding: 0 5%;
+    }
+    
+}
